@@ -27,7 +27,7 @@ class SendMessage extends Component
         $message->load('user');
         $message->load('chat');
 
-        event(new MessageSent($message));
+        broadcast(new MessageSent($message));
         $this->reset('body');
     }
     public function render(): View
